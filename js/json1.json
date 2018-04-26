@@ -1,0 +1,26 @@
+[{  
+    "imagen": "img/SG.jpg",
+    "nombre":"Steins;Gate 0",
+    "capitulos":"23",
+    "genero": "Drama, Sci-Fi, Thriller",
+    "temporada":"Spring 18",
+    "estudio": "White Fox",
+    "fuente":"Juego"
+},
+{   "imagen": "img/BnHA.jpg",
+    "nombre":"Boku no Hero Academia",
+    "capitulos":"25",
+    "genero": "Accion, Comedia",
+    "temporada":"Spring 18",
+    "estudio": "BONES",
+    "fuente": "Manga"
+},
+{   "imagen": "img/MB.jpg",
+    "nombre":"Megalo Box",
+    "capitulos":"13",
+    "genero": "Deportes, Drama",
+    "temporada":"Spring 18",
+    "estudio": "TMS Entertaiment",
+    "fuente": "Manga"
+}
+]

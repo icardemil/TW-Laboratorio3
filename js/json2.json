@@ -1,0 +1,25 @@
+[{  "imagen": "img/EMS.jpg",
+    "nombre":"Eromanga Sensei",
+    "capitulos":"12",
+    "genero": "Drama, Comedia, Romance",
+    "temporada":"Spring 17",
+    "estudio": "A-1 Pictures",
+    "fuente":"Novela Ligera"
+},
+{   "imagen": "img/GTA2.jpg",
+    "nombre":"Gakusen Toshi Asterisk 2",
+    "capitulos":"14",
+    "genero": "Accion",
+    "temporada":"Spring 16",
+    "estudio": "A-1 Picture",
+    "fuente": "Novela ligera"
+},
+{   "imagen": "img/G2.jpg",
+    "nombre":"Genshiken 2",
+    "capitulos":"12",
+    "genero": "Slice of life, Drama",
+    "temporada":"Fall 07",
+    "estudio": "TMS Entertaiment",
+    "fuente": "Manga"
+}
+]

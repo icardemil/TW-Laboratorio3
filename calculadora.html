@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tecno Web</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    button{
+        width: 100px;
+        height: 40px;
+        margin: 2px;
+}
+</style>
+<script>
+    var valorEnPantalla = 0;
+    var operador;
+    var valor1;
+    var valor2;
+    var temp;
+    $(document).ready(function() {
+        presionarCE();
+        $("button").click(function(){
+            temp = $(this).attr("value");
+            if($.isNumeric(temp)){
+                insertarNumero(temp);
+            }
+            else{
+                switch(temp){
+                    case "=":
+                        obtenerResultado();
+                        break;
+                    case "ce":
+                        presionarCE();
+                        break;
+                    case ".":
+                        insertarComa();
+                        break;
+                    case "ocultar":
+                        ocultarCalculadora();
+                        break;
+                    case "lol":
+                        alert("Botón de relleno :D");
+                        break;
+                    default:
+                        insertarOperecion(temp);
+                        break;
+                }
+            }
+        });
+    });
+    function insertarComa() {
+        if(valorEnPantalla==0){
+            valorEnPantalla = '0.';
+        }
+        else{
+            if(valorEnPantalla%1===0){
+                valorEnPantalla += '.';
+            }
+        }
+        updateInput();
+    }
+    function insertarNumero(numero) {
+        if(valorEnPantalla==0 && valorEnPantalla !== '0.'){
+            valorEnPantalla = numero;
+        }
+        else{
+            valorEnPantalla+=numero;
+        }
+        updateInput();
+    }
+    function updateInput(){
+        $("#resultado").val(valorEnPantalla);
+    }
+    function insertarOperecion(signo) {
+        if(valorEnPantalla != 0 && signo != "="){
+            valor1 = parseFloat(valorEnPantalla);
+            operador = signo;
+            valorEnPantalla = 0;
+            updateInput();
+        }
+    }
+    function obtenerResultado() {
+        valor2 = parseFloat(valorEnPantalla);
+        switch(operador){
+            case "+":
+                valor1 += valor2;
+                break;
+            case "-":
+                valor1 -= valor2;
+                break;
+            case "/":
+                valor1 /= valor2;
+                break;
+            case "x":
+                valor1 *= valor2;
+                break;
+        }
+        operador = null;
+        valorEnPantalla = parseFloat(valor1);
+        updateInput();
+        valor2=0;
+    }
+    function presionarCE() {
+        valor1 = 0;
+        valor2 = 0;
+        valorEnPantalla = 0;
+        operador = null;
+        updateInput();
+    }
+    function ocultarCalculadora(){
+        $("#esconder").fadeToggle(200);
+    }
+</script>
+
+<body style="background-color: #d3d2d2">
+    <!--Bloque de la navbar-->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="img/logo.png" style="width :25px; float: left; margin-right: 10px">Calendario Anime</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="cargajson.html">Ejercicio 1</a></li>
+          <li><a href="calculadora.html">Ejercicio 2</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!--Bloque contenedor de la calculadora-->         
+    <div class="panel panel-primary" style="width: 80%; margin: 0 auto; border-color: black">
+        <div class="panel-heading" style="background-color: gray;border-color: black">Actividad 2</div>
+    <!--Botón para ocultar la calculadora-->        
+        <div>
+            <button value="ocultar" class="btn btn-success col-sm-12" type="button" style="width: 60%; margin-bottom: 20px;margin-left: 20%">
+                <span class="glyphicon glyphicon-eye-open"></span> Mostrar/Ocultar calculadora
+            </button>
+        </div>  
+        <div class="container-fluid" style="background-color: lightgrey; width: 60%; padding: 10px; margin-bottom: 10px">
+            <!--Calculadora-->                    
+            <div id="esconder">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input id="resultado" type="text" placeholder="0" readonly  class="form-control" style="height: 80px;"> 
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <button value="+" class="btn btn-danger">+</button>
+                            <button value="-" class="btn btn-danger">-</button>
+                        </div>
+                        <div class="row">
+                            <button value="x" class="btn btn-danger">x</button>
+                            <button value="/" class="btn btn-danger">/</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" style="width: 100%">
+                        <div class="row">
+                            <button value="9" class="btn btn-dark">9</button>
+                            <button value="8" class="btn btn-dark">8</button>
+                            <button value="7" class="btn btn-dark">7</button>                
+                        </div>
+                        <div class="row">
+                            <button value="6" class="btn btn-dark">6</button>
+                            <button value="5" class="btn btn-dark">5</button>
+                            <button value="4" class="btn btn-dark">4</button>                
+                        </div>
+                        <div class="row">
+                            <button value="3" class="btn btn-dark">3</button>
+                            <button value="2" class="btn btn-dark">2</button>
+                            <button value="1" class="btn btn-dark">1</button>                
+                        </div>
+                    </div>
+                    <div class="col-sm-12" style="width: 100%">
+                        <div class="row">
+                            <button value="0" class="btn btn-dark">0</button>
+                            <button value="." class="btn btn-dark">.</button>
+                            <button value="lol" class="btn btn-dark glyphicon glyphicon-heart" type="button"></button>             
+                        </div>
+                        <div class="row">
+                            <button value="ce" class="btn btn-success" type="button">CE</button>
+                            <button value="=" class="btn btn-success" type="button">=</button>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

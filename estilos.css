@@ -1,0 +1,13 @@
+table, th, td{
+    margin: 0 auto;
+}
+th{
+    text-align: center;
+}
+#driver{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img{
+    width: 100px;
+}

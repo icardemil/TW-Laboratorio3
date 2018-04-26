@@ -1,0 +1,25 @@
+[{  "imagen": "img/RZ.jpg",
+    "nombre":"Re:Zero Kara Hajimeru Isekai Seikatsu",
+    "capitulos":"25",
+    "genero": "Action, Drama, Fantasia,Phisochological",
+    "temporada":"Spring 16",
+    "estudio": "White Fox",
+    "fuente":"Novela Ligera"
+},
+{   "imagen": "img/SdS.jpg",
+    "nombre":"Sakamoto desu ga?",
+    "capitulos":"12",
+    "genero": "Comedia",
+    "temporada":"Spring 16",
+    "estudio": "Studio Deen",
+    "fuente": "Manga"
+},
+{   "imagen": "img/JG.png",
+    "nombre":"Joker Game",
+    "capitulos":"12",
+    "genero": "Drama",
+    "temporada":"Spring 16",
+    "estudio": "Production I.G",
+    "fuente": "Otro"
+}
+]
